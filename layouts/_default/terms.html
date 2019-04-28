@@ -1,48 +1,47 @@
-{{ define "main" }}
-  <main class="post-main-wrapper px-5">
-    <!-- <div class="container"> -->
-    <div class="row">
-      <!-- Sidebar -->
-      <div class="col-md-3">
-        <!-- <hr> -->
-        
-        {{ partial "sidebar-categories.html" . }}
-        
-        {{ partial "sidebar-tags.html" . }}
+{{ define "content" }}
 
-        {{ partial "sidebar-series.html" . }}
+{{ $termName := .Data.Plural }}
+{{ $terms := .Data.Terms.ByCount }}
+{{ $length := len $terms }}
+{{ $type := .Type }}
+<!-- Categories Page -->
+<div class="post-warp {{.Data.Plural}}">
+    <h2 class="post-title" style="text-align:right;padding-bottom:2em">-&nbsp;{{ .Data.Plural | humanize }}&nbsp;-</h2>
+{{ if and $.Site.Taxonomies.categories (eq $termName "categories") }}
 
-      </div>
-      <!-- /.Sidebar -->
-
-      <!-- Post list -->
-      <!-- <div class="content"> -->
-      <div class="col-md-9 mt-3">  
-        <ul>
-          {{ partial "page-heading.html" . }}
-        
-          {{ if .Content }}
-            <div class="post-content markdown">
-              {{ .Content }}
-            </div>
-          {{ end }}  
-        </ul>
-        <ul>
-          
-          {{ range .Data.Terms.ByCount }}
-
-            <li class="post-item">
-              
-              <a href="{{ .Name | urlize }}"><span>{{ .Name }}</span></a>
-              <!-- <span class="ml-3">{{ .Count }} posts</span> -->
-              
-            </li>
-            
-          {{ end }}
-        </ul>
-      </div>
-      <!-- /.Post list -->
-      
-    </div>
-  </main>
+<div class="categories-card">
+{{ range $terms }}
+    {{ $term := .Term }}
+    {{ $pages := .Pages }}
+    {{ with $.Site.GetPage "taxonomy" (printf "%s/%s" $type $term) }}
+         <div class="card-item">
+           <div class="categories" >
+             <a href="{{ .URL }}"><h3> <i class="iconfont icon-folder" style="padding-right: 3px"></i> {{ $term | humanize}}  </h3> </a>
+               {{ range first 5 $pages }}   
+                <article class="archive-item">
+                <a href="{{ .URL }}" class="archive-item-link">{{ .Title }}</a>
+                </article>
+              {{ end }}
+               {{ if gt (len $pages) 5 }}
+                  <span class="more-post">
+                    <a href="{{ .Permalink }}" class="more-post-link">{{ i18n "More" }}  >></a>
+               </span> 
+               {{ end }}
+           </div>
+        </div>
+    {{ end }}
 {{ end }}
+</div> <!-- //categories-card -->
+ <!-- Tag cloud Page -->
+{{ else if and $.Site.Taxonomies.tags (eq $termName "tags") }}
+     <div class="tag-cloud-tags">
+          {{ range $.Site.Taxonomies.tags.ByCount }}
+            {{ if .Name }}
+            <a href="/tags/{{ .Name | urlize}}/"> {{ .Name }} <small>({{ .Count }})</small></a>
+            {{ end }}
+          {{end}}
+     </div>
+
+{{ end }}
+</div>
+{{end }}

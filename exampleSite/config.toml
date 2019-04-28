@@ -1,88 +1,177 @@
-baseURL                   = "https://example.com"
-builddrafts                = false
-languageCode               = "zn-Hans"
-canonifyurls               = true
-contentdir                 = "content"
-layoutdir                  = "layouts"
-publishdir                 = "public"
-enableEmoji                = true
-hasCJKLanguage             = true
-summaryLength              = 200
-Paginate                   = 3
+baseURL = "https://example.com"
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "KeepIt"
+theme = "KeepIt"
 
-theme                      = "AllinOne"
-title                      = "Orianna"
+paginate = 12
+enableEmoji = true
+enableRobotsTXT = true
+googleAnalytics = ""
+disqusShortname = "yourdiscussshortname"
 
-pygmentsuseclasses         = true
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
 
+[blackfriday]
+  hrefTargetBlank = true
+  nofollowLinks = true
+  noreferrerLinks = true
 
-[permalinks]
-  blog                     = "blog/:year-:month/:slug/"
-
-
-[taxonomies]
-  tag                      = "tags"
-  series                   = "series"
-  category                 = "categories"
-
+[Permalinks]
+ posts = "/:year/:filename/"
 
 [menu]
   [[menu.main]]
-    name                   = "Blog"
-    weight                 = -120
-    identifier             = "blog"
-    url                    = "blog/"  
+    name = "Blog"
+    url = "/posts/"
+    weight = 1
 
   [[menu.main]]
-    name                   = "Moment"
-    weight                 = -110
-    identifier             = "moment"
-    url                    = "moment/" 
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
 
   [[menu.main]]
-    name                   = "About"
-    weight                 = -100
-    identifier             = "about"
-    url                    = "about/"  
-
- 
+    name = "About"
+    url = "/about"
+    weight = 4
 
 [params]
-  faviconfile              = "img/zheng.png"               # from static/
-  avatar                   = "img/profile.jpg"             # path to image in static dir e.g img/avatar.png 
-  author                   = "Orianna"
-  description              = ["Be myself.", "Love the wonderful world.", "Do the right things and be a better man."]           # appears in the site header when set to a non-empty string
-  welcome_head             = "Hello, World!"
-  welcome_word             = "~ No Day But Today ~"
+    since = 2012
+    author = "Fastbyte01"               # Author's name
+    subtitle = "A Hugo theme"       # Subtitle
+    cdn_url = ""           # Base CDN URL
+    home_mode = "" # post or other
 
-  latestpostscount         = 5                             # how many posts to display on the home page
-  bloggroupby              = 'month'
-  dateform                 = "Jan 2, 2006"
-  dateformfull             = "2006-01-02  Monday  15:04:05"
-  noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
-
-  # slides
-  slidesDirPath            = "themes/AllinOne/static/img/header-slides"    # path to image in local dir (path for hugo)
-  slidesDirPathURL         = "img/header-slides"    # path to image in static dir (for static pages)
-
-  # highlighting 
-  highlightjs              = true
-
-  # latex
-  katex                    = true
-
-  # links
-  email                    = "you@email.com"
-  github                   = "//github.com/you"
-  linkedin                 = "//linkedin.com/in/you"
-  facebook                 = "//facebook.com/you"
-  googleplus               = "//google.com/you"
-  twitter                  = "//twitter.com/you" 
-  px500                    = "//px500"
-  instagram                = "//instagram.com/you"
-  include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
-  
-  # analytics
-  googleAnalytics          = "your-google-analytic-id"
+    google_verification = ""
+    bing_verification = ""
+    yandex_verification = ""
+    pinterest_verification = ""
+    baidu_verification = ""
     
+    avatar = "/images/me/avatar.jpg" #comment it to use gravatar
+    socialShare = true
     
+    description = "" # site description
+    keywords = "" # site keywords
+
+    license= 'Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+[params.gravatar]
+    #email = "example@gmail.com"   #uncomment and insert your email address to use gravatar
+
+
+[params.social]
+    GitHub = "xxxx"
+    Linkedin = "xxxx"
+    Twitter = "xxxx"
+    #Instagram = "xxxx"
+    #Email   = "xxxx"
+    Facebook = "xxxx"
+    #Telegram = "xxxx"
+    #Medium = "xxxx"
+    #Gitlab = "xxxx"
+    #Youtubelegacy = "xxxx"
+    #Youtubecustom = "xxxx"
+    #Youtubechannel = "xxxx"
+    #Tumblr ="xxxx"
+    #Quora = "xxxx"
+    #Keybase = "xxxx"
+    #Pinterest = "xxxx"
+    #Reddit = "xxxx"
+    #Codepen = "xxxx"
+    #Bitbucket = "xxxx"
+    #Stackoverflow = "xxxxx"
+    #Weibo = "xxxx"
+    #Odnoklassniki = "xxxx"
+    #VKontakte = "xxxx"
+    #Flickr = "xxxx"
+    #Xing = "xxxx"
+    #Snapchat = "xxxx"
+    #Soundcloud = "xxxx"
+    #Spotify = "xxxx"
+    #Bandcamp = "xxxx"
+    #Paypal = "xxxx"
+    #Fivehundredpx = "xxxx"
+    #Mix = "xxxx"
+    #Goodreads = "xxxx"
+    #Lastfm = "xxxx"
+    #Foursquare = "xxxx"
+    #Hackernews = "xxxx"
+    #Kickstarter = "xxxx"
+    #Patreon = "xxxx"
+    #Steam = "xxxx"
+    #Twitch = "xxxx"
+    #Strava = "xxxx"
+    #Skype = "xxxx"
+    #Whatsapp = "xxxx"
+    #Zhihu = "xxxx"
+    #Douban = "xxxx"
+    #Angellist = "xxxx"
+    #Slidershare = "xxxx"
+    #Jsfiddle = "xxxx"
+    #Deviantart = "xxxx"
+    #Behance = "xxxx"
+    #Dribble = "xxxx"
+    #Wordpress = "xxxx"
+    #Vine = "xxxx"
+    #Googlescholar = "xxxx"
+    #Researchgate = "xxxx"
+    #Mastodon = "xxxx"
+    #Thingiverse = "xxxx"
+
+[params.share]
+Twitter = true
+Facebook = true
+#Reddit = true
+Linkedin = true
+#Pinterest = true
+#HackerNews = true
+#Mix = true
+#Tumblr = true
+#VKontakte = true
+#Douban = true
+#Weibo = true
+
+# Used only for Seo schema 
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+
+[author]
+  name = "Fastbyte01"
+
+  [params.publisher]
+    name = "Fastbyte01"
+
+    [params.publisher.logo]
+      url = "logo.png"
+      width = 127
+      height = 40
+
+  [params.logo]
+    url = "logo.png"
+    width = 127
+    height = 40
+
+  [params.image]
+    url = "cover.png"
+    width = 800
+    height = 600
+
+[params.gitalk]           
+owner = ""              
+repo = ""               
+clientId = ""           
+clientSecret = ""   
+
+[params.valine]
+  enable = false
+  appId = 'your appId'
+  appKey = 'your appKey'
+  notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+  verify = false # Verification code
+  avatar = 'mm'
+  placeholder = 'your comments ...'
+  visitor = true
