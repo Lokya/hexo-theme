@@ -3,7 +3,7 @@
 <% } else { %>
   <h1 class='title'><%- theme.cover.title ? theme.cover.title : config.title %></h1>
 <% } %>
-<% if (theme.search.enable === true) { %>
+<% if (theme.search && theme.search.enable === true) { %>
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
       <input type="text" class="input u-search-input" placeholder="<%- theme.cover.search_placeholder %>" />
