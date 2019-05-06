@@ -4,6 +4,7 @@
       <%- post.title ? post.title : date(post.date, theme.date_format) %>
     </a>
   </h2>
+  <%- post.description %>
 <% } else { %>
   <% if (post.title || page.title || config.title) { %>
     <h1 class="title">
@@ -11,5 +12,6 @@
         <%- post.title ? post.title : date(post.date, theme.date_format) %>
       </a>
     </h1>
+    <%- post.description %>
   <% } %>
 <% } %>
