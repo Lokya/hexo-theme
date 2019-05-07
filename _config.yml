@@ -55,11 +55,11 @@ cover:
     - name: 博文
       icon: fas fa-rss
       url: /
-    - name: 项目
-      icon: fas fa-code-branch
-      url: projects/
+    - name: 标签
+      icon: fas fa-tag
+      url: blog/tags/
     - name: 归档
-      icon: fas fa-link
+      icon: fas fa-code-branch
       url: blog/archives/
       rel: nofollow
     - name: 关于
