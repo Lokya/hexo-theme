@@ -1,7 +1,14 @@
 <% if (theme.cover.logo) { %>
   <img class='logo' src='<%- url_for(theme.cover.logo) %>'/>
 <% } else { %>
-  <h1 class='title'><%- theme.cover.title ? theme.cover.title : config.title %></h1>
+  <h1 class='title'>
+      <% if (theme.cover.ifChineseTitle) { %>
+        <span class="left-title"><%- theme.cover.leftTitle %></span>
+        <span class="right-title"><%- theme.cover.rightTitle %></span>
+        <% } else { %>
+          <%- theme.cover.title ? theme.cover.title : config.title %>
+        <% } %>
+  </h1>
 <% } %>
 <% if (theme.search && theme.search.enable === true) { %>
   <div class="m_search">

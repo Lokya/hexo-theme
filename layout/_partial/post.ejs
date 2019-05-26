@@ -7,14 +7,20 @@
       <% } else { %> 
         <%- post.excerpt || post.content %>
       <% } %>
-      <% if (post.readmore != false && (post.coverImg || post.excerpt)) { %>
-        <div class="readmore">
+      <!-- <% if (post.readmore != false && (post.coverImg || post.excerpt)) { %> -->
+        <!-- <div class="readmore">
           <a href="<%- url_for(post.path) %>" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             <%- __('post.read_more') %>
           </a>
-        </div>
-      <% } %>
+        </div> -->
+      <!-- <% } %> -->
+    </div>
+    <div class="readmore">
+      <a href="<%- url_for(post.path) %>" class="flat-box">
+        <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+        <%- __('post.read_more') %>
+      </a>
     </div>
     <% if (post.tags && post.tags.length) { %>
       <div class="full-width auto-padding tags">

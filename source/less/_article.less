@@ -297,7 +297,8 @@
     font-size: @fontsize_small;
     line-height: @lineheight_base;
     margin-top: @gap;
-    background: darken(fade(@theme_background, 50%), 5%);
+    // background: darken(fade(@theme_background, 50%), 5%);
+    border-top: 2px solid #fb89497a;
     &.article-tags {
       // padding-top: 2*@gap;
       // background: transparent;
@@ -413,6 +414,10 @@
       border-bottom-left-radius: @border_radius;
     }
 
+  }
+  .article-entry {
+    max-height: 500px;
+    overflow: hidden;
   }
 }
 

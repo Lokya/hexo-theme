@@ -70,6 +70,22 @@ fancybox{
       text-align: center;
       font-weight: bold;
     }
+    .left-title {
+      background: #414141;
+      float: left;
+      color: #fff;
+      width: 79px;
+      height: 79px;
+      line-height: 79px;
+    }
+    .right-title {
+      background: #fff;
+      color: #414141;
+      float: left;
+      width: 79px;
+      height: 79px;
+      line-height: 79px;
+    }
     .logo{
       max-height: 150px;
       max-width: ~"calc(100% - 4*@{gap})";
@@ -126,8 +142,8 @@ fancybox{
           padding-left: @iconW + @iconMargin;
         }
         border-radius: @height_navbar;
-        background: lighten(@theme_cardbg, 10%);
-        border: 1px dashed transparent;
+        // background: lighten(@theme_cardbg, 10%);
+        border: 1px dashed @black;
         .set-placeholder({
           padding-top: 2px;
           color: fade(@color_text_main, 60%);
